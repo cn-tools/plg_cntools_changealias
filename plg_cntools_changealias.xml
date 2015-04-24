@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" version="3.0" group="content" method="upgrade">
+	<name>PLG_CNTOOLS_CHANGEALIAS</name>
+	<author>CN-Tools | Clemens Neubauer</author>
+	<creationDate>2015 April</creationDate>
+	<copyright>Copyright 2015 (C) Clemens Neubauer. All rights reserved.</copyright>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+	<authorEmail>cn-tools@gmx.at</authorEmail>
+	<authorUrl>https://github.com/cn-tools/</authorUrl>
+	<version>0.0.1</version>
+	
+	<description>PLG_CNTOOLS_CHANGEALIAS_DESC</description>
+
+	<files>
+		<filename plugin="plg_cntools_changealias">plg_cntools_changealias.php</filename>
+		<filename plugin="plg_cntools_changealias">index.html</filename>
+	</files>
+
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_content_plg_cntools_changealias.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_content_plg_cntools_changealias.sys.ini</language>
+		<language tag="de-DE">de-DE/de-DE.plg_content_plg_cntools_changealias.ini</language>
+		<language tag="de-DE">de-DE/de-DE.plg_content_plg_cntools_changealias.sys.ini</language>
+	</languages>
+
+	<updateservers>
+		<server type="extension" priority="1" name="plg_cntools_changealias Updates">https://raw.githubusercontent.com/cn-tools/plg_cntools_changealias/master/updateversion.xml</server>
+	</updateservers>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="onlynew" type="radio" default="1" class="btn-group btn-group-yesno" label="PLG_CNTOOLS_CHANGEALIAS_ONLYNEW" description="PLG_CNTOOLS_CHANGEALIAS_ONLYNEW_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="hidden1" type="hidden" default="" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>
