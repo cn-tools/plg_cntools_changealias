@@ -22,7 +22,8 @@ class PlgContentPlg_CNTools_ChangeAlias extends JPlugin
 	{
 		parent::__construct( $subject, $config );
 	}
-
+	
+	//--------------------------------------------------------------
 	public function onContentBeforeSave($context, $article, $isNew) 
 	{
 		if (is_object($article))
@@ -35,10 +36,34 @@ class PlgContentPlg_CNTools_ChangeAlias extends JPlugin
 		return true;
 	}
 
-	protected function transferChars($str)
+	//--------------------------------------------------------------
+	protected function transferChars($basestr)
 	{
-		$str = str_replace(array('ä', 'ö', 'ü', 'ß', 'Ä', 'Ö', 'Ü'), array('ae', 'oe', 'ue', 'ss', 'AE', 'OE', 'UE'), $str); 
-		return $str;
+		//-- maybe transfer alias into upper/lower-case characters
+		$doUpLow = $this->params->get('uplow');
+		if ($doUpLow == '1') {
+			$basestr = mb_strtoupper($basestr);
+		} elseif ($doUpLow == '2') {
+			$basestr = mb_strtolower($basestr);
+		}
+		
+		//-- maybe transfer alias characters
+		if ($this->params->get('values')){
+			$lValues = array_map('trim', explode("\n", $this->params->get('values')));
+			
+			//-- rework every item for alias
+			foreach ($lValues as &$lSubArray){
+				$workArray = explode('=', $lSubArray); 
+				if ($this->params->get('casesensitiv')){
+					// use case sensitiv chars
+					$basestr = str_replace($workArray[0] , $workArray[1], $basestr); 
+				} else {
+					// do not use case sensitive chars
+					$basestr = str_ireplace($workArray[0] , $workArray[1], $basestr); 
+				}
+			}
+		}
+		return $basestr;
 	}
 }
 ?>

@@ -7,7 +7,7 @@
 	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
 	<authorEmail>cn-tools@gmx.at</authorEmail>
 	<authorUrl>https://github.com/cn-tools/</authorUrl>
-	<version>0.0.1</version>
+	<version>0.0.2</version>
 	
 	<description>PLG_CNTOOLS_CHANGEALIAS_DESC</description>
 
@@ -26,14 +26,34 @@
 	<updateservers>
 		<server type="extension" priority="1" name="plg_cntools_changealias Updates">https://raw.githubusercontent.com/cn-tools/plg_cntools_changealias/master/updateversion.xml</server>
 	</updateservers>
+	
 	<config>
 		<fields name="params">
 			<fieldset name="basic">
-				<field name="onlynew" type="radio" default="1" class="btn-group btn-group-yesno" label="PLG_CNTOOLS_CHANGEALIAS_ONLYNEW" description="PLG_CNTOOLS_CHANGEALIAS_ONLYNEW_DESC">
+				<field name="uplow" type="radio" default="0" class="btn-group btn-group-yesno" label="PLG_CNTOOLS_CHANGEALIAS_UPLOW" description="PLG_CNTOOLS_CHANGEALIAS_UPLOW_DESC">
+					<option value="0">JNO</option>
+					<option value="1">PLG_CNTOOLS_CHANGEALIAS_UPLOW_UPPER</option>
+					<option value="2">PLG_CNTOOLS_CHANGEALIAS_UPLOW_LOWER</option>
+				</field>
+
+				<field name="casesensitiv" type="radio" default="1" class="btn-group btn-group-yesno" label="PLG_CNTOOLS_CHANGEALIAS_CASESENSITIVE" description="PLG_CNTOOLS_CHANGEALIAS_CASESENSITIVE_DESC">
 					<option value="0">JNO</option>
 					<option value="1">JYES</option>
 				</field>
-				<field name="hidden1" type="hidden" default="" />
+
+				<field name="values" type="textarea" default="" label="PLG_CNTOOLS_CHANGEALIAS_VALUES" description="PLG_CNTOOLS_CHANGEALIAS_VALUES_DESC" rows="10" cols="5" filter="raw"/>
+				<field name="noteb1" type="note" label="PLG_CNTOOLS_CHANGEALIAS_ATTENTION" description="PLG_CNTOOLS_CHANGEALIAS_VALUES_NOTE_DESC" />
+
+				<field name="basichidden1" type="hidden" default="" />
+			</fieldset>
+			<fieldset name="special" label="PLG_CNTOLS_IMAGERESIZER_SPECIAL_LABEL">
+				<field name="onlynew" type="radio" default="1" class="btn-group btn-group-yesno" label="PLG_CNTOOLS_CHANGEALIAS_ONLYNEW">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="notes1" type="note" label="PLG_CNTOOLS_CHANGEALIAS_ATTENTION" description="PLG_CNTOOLS_CHANGEALIAS_ONLYNEW_DESC" />
+				
+				<field name="specialhidden1" type="hidden" default="" />
 			</fieldset>
 		</fields>
 	</config>
