@@ -26,7 +26,7 @@ class PlgContentPlg_CNTools_ChangeAlias extends JPlugin
 	//--------------------------------------------------------------
 	public function onContentBeforeSave($context, $article, $isNew) 
 	{
-		if (is_object($article))
+		if (is_object($article) and property_exists($article, 'alias'))
 		{
 			if (($isNew) || ($this->params->get('onlynew')=='0'))
 			{
