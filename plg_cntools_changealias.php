@@ -16,6 +16,9 @@
 // no direct access
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
+// import library dependencies
+jimport('joomla.plugin.plugin'); 
+
 class PlgContentPlg_CNTools_ChangeAlias extends JPlugin
 {
 	public function PlgContentPlg_CNTools_ChangeAlias( &$subject, $config )
@@ -28,7 +31,7 @@ class PlgContentPlg_CNTools_ChangeAlias extends JPlugin
 	{
 		if (is_object($article) and property_exists($article, 'alias'))
 		{
-			if (($isNew) || ($this->params->get('onlynew')=='0'))
+			if (($isNew) or ($this->params->get('onlynew')=='0'))
 			{
 				$article->alias = $this->transferChars($article->alias);
 			}
@@ -50,9 +53,14 @@ class PlgContentPlg_CNTools_ChangeAlias extends JPlugin
 		//-- maybe transfer alias characters
 		if ($this->params->get('values')){
 			$lValues = array_map('trim', explode("\n", $this->params->get('values')));
-			
+
 			//-- rework every item for alias
 			foreach ($lValues as &$lSubArray){
+				// special transfer '[space]' to one space ' '
+				$lSubArray = str_ireplace('[space]' , ' ', $lSubArray);
+				// special transfer '[nothing]' to empty string ''
+				$lSubArray = str_ireplace('[nothing]' , '', $lSubArray);
+
 				$workArray = explode('=', $lSubArray); 
 				if ($this->params->get('casesensitiv')){
 					// use case sensitiv chars
