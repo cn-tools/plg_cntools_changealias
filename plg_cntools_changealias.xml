@@ -48,7 +48,7 @@
 			</fieldset>
 			<fieldset name="additional" label="PLG_CNTOLS_IMAGERESIZER_ADDITIONAL_LABEL">
 				<field name="contextyesno" type="radio" default="0" class="btn-group btn-group-yesno" label="PLG_CNTOOLS_CHANGEALIAS_CONTEXTYESNO" description="PLG_CNTOOLS_CHANGEALIAS_CONTEXTYESNO_DESC">
-					<option value="0">JALL</option>
+					<option value="0">PLG_CNTOOLS_CHANGEALIAS_CONTEXTYESNO_NOTHING</option>
 					<option value="1">PLG_CNTOOLS_CHANGEALIAS_CONTEXTYESNO_INCLUDE</option>
 					<option value="2">PLG_CNTOOLS_CHANGEALIAS_CONTEXTYESNO_EXCLUDE</option>
 				</field>
