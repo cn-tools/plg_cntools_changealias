@@ -2,12 +2,12 @@
 <extension type="plugin" version="3.0" group="content" method="upgrade">
 	<name>PLG_CNTOOLS_CHANGEALIAS</name>
 	<author>CN-Tools | Clemens Neubauer</author>
-	<creationDate>2015 April</creationDate>
+	<creationDate>2015 December</creationDate>
 	<copyright>Copyright 2015 (C) Clemens Neubauer. All rights reserved.</copyright>
 	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
 	<authorEmail>cn-tools@gmx.at</authorEmail>
 	<authorUrl>https://github.com/cn-tools/</authorUrl>
-	<version>0.0.4</version>
+	<version>0.0.5</version>
 	
 	<description>PLG_CNTOOLS_CHANGEALIAS_DESC</description>
 
@@ -44,16 +44,29 @@
 				<field name="values" type="textarea" default="" label="PLG_CNTOOLS_CHANGEALIAS_VALUES" description="PLG_CNTOOLS_CHANGEALIAS_VALUES_DESC" rows="10" cols="5" filter="raw"/>
 				<field name="noteb1" type="note" label="PLG_CNTOOLS_CHANGEALIAS_ATTENTION" description="PLG_CNTOOLS_CHANGEALIAS_VALUES_NOTE_DESC" />
 
-				<field name="basichidden1" type="hidden" default="" />
+				<field name="basichiddenlast" type="hidden" default="" />
+			</fieldset>
+			<fieldset name="additional" label="PLG_CNTOLS_IMAGERESIZER_ADDITIONAL_LABEL">
+				<field name="contextyesno" type="radio" default="0" class="btn-group btn-group-yesno" label="PLG_CNTOOLS_CHANGEALIAS_CONTEXTYESNO" description="PLG_CNTOOLS_CHANGEALIAS_CONTEXTYESNO_DESC">
+					<option value="0">JALL</option>
+					<option value="1">PLG_CNTOOLS_CHANGEALIAS_CONTEXTYESNO_INCLUDE</option>
+					<option value="2">PLG_CNTOOLS_CHANGEALIAS_CONTEXTYESNO_EXCLUDE</option>
+				</field>
+
+				<field name="context" type="textarea" default="" label="PLG_CNTOOLS_CHANGEALIAS_CONTEXT" description="PLG_CNTOOLS_CHANGEALIAS_CONTEXT_DESC" rows="10" cols="5" filter="raw"/>
+				<!--showon="contextyesno:1[OR]contextyesno:2"--> 
+
+				<field name="additionalhiddenlast" type="hidden" default="" />
 			</fieldset>
 			<fieldset name="special" label="PLG_CNTOLS_IMAGERESIZER_SPECIAL_LABEL">
-				<field name="onlynew" type="radio" default="1" class="btn-group btn-group-yesno" label="PLG_CNTOOLS_CHANGEALIAS_ONLYNEW">
+				<field name="onlynew" type="radio" default="1" class="btn-group btn-group-yesno" label="PLG_CNTOOLS_CHANGEALIAS_ONLYNEW" description="PLG_CNTOOLS_CHANGEALIAS_ONLYNEW_DESC">
 					<option value="0">JNO</option>
-					<option value="1">JYES</option>
+					<option value="1">PLG_CNTOOLS_CHANGEALIAS_ONLYNEW_STANDARD</option>
 				</field>
-				<field name="notes1" type="note" label="PLG_CNTOOLS_CHANGEALIAS_ATTENTION" description="PLG_CNTOOLS_CHANGEALIAS_ONLYNEW_DESC" />
+
+				<field name="notes1" showon="onlynew:0" type="note" description="PLG_CNTOOLS_CHANGEALIAS_ATTENTION" />
 				
-				<field name="specialhidden1" type="hidden" default="" />
+				<field name="specialhiddenlast" type="hidden" default="" />
 			</fieldset>
 		</fields>
 	</config>
