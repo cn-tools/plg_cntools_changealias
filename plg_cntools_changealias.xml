@@ -7,7 +7,7 @@
 	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
 	<authorEmail>cn-tools@gmx.at</authorEmail>
 	<authorUrl>https://github.com/cn-tools/</authorUrl>
-	<version>0.0.5</version>
+	<version>0.0.6</version>
 	
 	<description>PLG_CNTOOLS_CHANGEALIAS_DESC</description>
 
@@ -53,8 +53,9 @@
 					<option value="2">PLG_CNTOOLS_CHANGEALIAS_CONTEXTYESNO_EXCLUDE</option>
 				</field>
 
+				<field name="notea1" showon="contextyesno:0" type="note" description="PLG_CNTOOLS_CHANGEALIAS_CONTEXTYESNO_HELP" />
+
 				<field name="context" type="textarea" default="" label="PLG_CNTOOLS_CHANGEALIAS_CONTEXT" description="PLG_CNTOOLS_CHANGEALIAS_CONTEXT_DESC" rows="10" cols="5" filter="raw"/>
-				<!--showon="contextyesno:1[OR]contextyesno:2"--> 
 
 				<field name="additionalhiddenlast" type="hidden" default="" />
 			</fieldset>
