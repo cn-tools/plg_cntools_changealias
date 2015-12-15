@@ -42,7 +42,7 @@
 				</field>
 
 				<field name="values" type="textarea" default="" label="PLG_CNTOOLS_CHANGEALIAS_VALUES" description="PLG_CNTOOLS_CHANGEALIAS_VALUES_DESC" rows="10" cols="5" filter="raw"/>
-				<field name="noteb1" type="note" label="PLG_CNTOOLS_CHANGEALIAS_ATTENTION" description="PLG_CNTOOLS_CHANGEALIAS_VALUES_NOTE_DESC" />
+				<field name="noteb1" type="note" description="PLG_CNTOOLS_CHANGEALIAS_VALUES_NOTE_DESC" />
 
 				<field name="basichiddenlast" type="hidden" default="" />
 			</fieldset>
