@@ -7,7 +7,7 @@
 	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
 	<authorEmail>cn-tools@gmx.at</authorEmail>
 	<authorUrl>https://github.com/cn-tools/</authorUrl>
-	<version>0.0.7</version>
+	<version>0.0.8</version>
 	
 	<description>PLG_CNTOOLS_CHANGEALIAS_DESC</description>
 
@@ -48,7 +48,7 @@
 
 				<field name="basichiddenlast" type="hidden" default="" />
 			</fieldset>
-			<fieldset name="additional" label="PLG_CNTOLS_IMAGERESIZER_ADDITIONAL_LABEL">
+			<fieldset name="additional" label="PLG_CNTOOLS_CHANGEALIAS_ADDITIONAL_LABEL">
 				<field name="contextyesno" type="radio" default="0" class="btn-group btn-group-yesno" label="PLG_CNTOOLS_CHANGEALIAS_CONTEXTYESNO" description="PLG_CNTOOLS_CHANGEALIAS_CONTEXTYESNO_DESC">
 					<option value="0">PLG_CNTOOLS_CHANGEALIAS_CONTEXTYESNO_NOTHING</option>
 					<option value="1">PLG_CNTOOLS_CHANGEALIAS_CONTEXTYESNO_INCLUDE</option>
@@ -61,7 +61,7 @@
 
 				<field name="additionalhiddenlast" type="hidden" default="" />
 			</fieldset>
-			<fieldset name="special" label="PLG_CNTOLS_IMAGERESIZER_SPECIAL_LABEL">
+			<fieldset name="special" label="PLG_CNTOOLS_CHANGEALIAS_SPECIAL_LABEL">
 				<field name="onlynew" type="radio" default="1" class="btn-group btn-group-yesno" label="PLG_CNTOOLS_CHANGEALIAS_ONLYNEW" description="PLG_CNTOOLS_CHANGEALIAS_ONLYNEW_DESC">
 					<option value="0">JNO</option>
 					<option value="1">PLG_CNTOOLS_CHANGEALIAS_ONLYNEW_STANDARD</option>
