@@ -21,7 +21,7 @@ jimport('joomla.plugin.plugin');
 
 class PlgContentPlg_CNTools_ChangeAlias extends JPlugin
 {
-	public function PlgContentPlg_CNTools_ChangeAlias( &$subject, $config )
+	public function __construct(&$subject, $config)
 	{
 		parent::__construct( $subject, $config );
 	}
